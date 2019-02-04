@@ -1,0 +1,17 @@
+{
+  "version" : "0.1",
+  "parameters" : [ {
+    "name" : "Name in parameters class",
+    "description" : "Description parameters",
+    "isList" : true,
+    "roles" : [ "role1" ],
+    "type" : "SomeType",
+    "bundle" : [ {
+      "path" : [ {
+        "code" : "123",
+        "value" : "val123"
+      } ],
+      "values" : [ "SomeValue" ]
+    } ]
+  } ]
+}

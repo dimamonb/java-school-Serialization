@@ -1,0 +1,40 @@
+{
+  "version": "sss",
+  "parameters": [
+    {
+      "description": "descr",
+      "isList": false,
+      "types": "T",
+      "roles": [
+        {
+          "role": "r"
+        },
+        {
+          "role": "r2"
+        }
+      ],
+      "bundle": [
+        {
+          "path": [
+            {
+              "code": "code",
+              "value": "value"
+            },
+            {
+              "code": "code",
+              "value": "value"
+            }
+          ],
+          "values": [
+            {
+              "value": "val"
+            },
+            {
+              "value": "val3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
