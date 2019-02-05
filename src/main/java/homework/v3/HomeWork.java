@@ -3,9 +3,9 @@ package homework.v3;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import homework.v3.entity.JsonFileClass;
-import homework.v3.entity.da.CustomDeserializator;
-import homework.v3.entity.da.CustomSerializator;
-import homework.v3.entity.da.JsonReaderWithJackson;
+import homework.v3.da.CustomDeserializator;
+import homework.v3.da.CustomSerializator;
+import homework.v3.da.JsonReaderWithJackson;
 
 import java.io.File;
 
@@ -29,6 +29,8 @@ public class HomeWork {
     final static String binarySerializeFile = "homework.parameters.ser";
     final static String binaryExternalizeFile = "homework.parameters.exter";
     final static String jsonSerializeFile = "homework.result.ser.parameters.json";
+
+    static homework.v3.exentity.exJsonFileClass exJsonFileClass = null;
 
     public static void main(String[] args) throws Exception {
 
@@ -56,6 +58,8 @@ public class HomeWork {
         ObjectMapper mapper = new ObjectMapper();
         mapper.writerWithDefaultPrettyPrinter().writeValue(new File(jsonSerializeFile), jfc);
 
+        /*******************************************************************************/
+       
     }
 
 }

@@ -1,4 +1,4 @@
-package homework.v3.entity.da;
+package homework.v3.da;
 
 
 import homework.v3.entity.JsonFileClass;
