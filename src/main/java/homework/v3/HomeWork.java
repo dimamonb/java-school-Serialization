@@ -1,10 +1,14 @@
 package homework.v3;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import homework.v3.entity.JsonFileClass;
+import homework.v3.entity.da.CustomDeserializator;
+import homework.v3.entity.da.CustomSerializator;
 import homework.v3.entity.da.JsonReaderWithJackson;
 
-import java.io.IOException;
+import java.io.File;
+
 
 /**
  * Задание
@@ -22,12 +26,36 @@ import java.io.IOException;
  * */
 public class HomeWork {
     final static String jsonFile = "homework.parameters.json";
-    final static String binatySerializeFile = "homework.parameters.ser";
-    final static String binatyExternalizeFile = "homework.parameters.exter";
+    final static String binarySerializeFile = "homework.parameters.ser";
+    final static String binaryExternalizeFile = "homework.parameters.exter";
+    final static String jsonSerializeFile = "homework.result.ser.parameters.json";
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
+
+        /************************* Читаем данные из json *********************************/
         JsonReaderWithJackson jsonReaderWithJackson = new JsonReaderWithJackson();
-        JsonFileClass jsonFileClass = jsonReaderWithJackson.readJson(jsonFile);
+        JsonFileClass jsonFileClass = null;
+        jsonFileClass = jsonReaderWithJackson.readJson(jsonFile);
+        System.out.print(jsonFileClass + "\n");
+
+        System.out.println("***************************************************");
+
+        /***************** Сериализация в файл ***************/
+
+        CustomSerializator cs = new CustomSerializator();
+        cs.customSerialize(jsonFileClass, binarySerializeFile);
+
+        /****************** Прочитать из файла ***********************************/
+        JsonFileClass jfc = null;
+        CustomDeserializator cd = new CustomDeserializator();
+        jfc = cd.customDeserialize(binarySerializeFile);
+        System.out.println(jfc);
+
+        /********************* Записать прочитанные данные в json ************************/
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.writerWithDefaultPrettyPrinter().writeValue(new File(jsonSerializeFile), jfc);
+
     }
 
 }

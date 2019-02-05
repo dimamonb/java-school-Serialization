@@ -23,4 +23,12 @@ public class Bundle implements Serializable {
     public void setValues(List<String> values) {
         this.values = values;
     }
+
+    @Override
+    public String toString() {
+        return "Bundle{" +
+                "path=" + path +
+                ", values=" + values +
+                '}';
+    }
 }

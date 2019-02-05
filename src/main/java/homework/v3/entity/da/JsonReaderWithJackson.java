@@ -1,6 +1,7 @@
 package homework.v3.entity.da;
 
-import homework.v3.entity.externalize.entities.JsonFileClass;
+
+import homework.v3.entity.JsonFileClass;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.File;

@@ -24,4 +24,12 @@ public class Path  implements Serializable {
     public void setValue(String value) {
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        return "Path{" +
+                "code='" + code + '\'' +
+                ", value='" + value + '\'' +
+                '}';
+    }
 }
